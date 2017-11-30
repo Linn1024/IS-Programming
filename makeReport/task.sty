@@ -115,21 +115,21 @@
 % -- Setup keywords --
 
 \if@russian
-\def\kw@Problem{Г‡Г Г¤Г Г­ГЁГҐ}
-\def\kw@InputFileName{Г€Г¬Гї ГўГµГ®Г¤Г­Г®ГЈГ® ГґГ Г©Г«Г :}
-\def\kw@OutputFileName{Г€Г¬Гї ГўГ»ГµГ®Г¤Г­Г®ГЈГ® ГґГ Г©Г«Г :}
-\def\kw@TimeLimit{ГЋГЈГ°Г Г­ГЁГ·ГҐГ­ГЁГҐ ГЇГ® ГўГ°ГҐГ¬ГҐГ­ГЁ:}
-\def\kw@MemoryLimit{ГЋГЈГ°Г Г­ГЁГ·ГҐГ­ГЁГҐ ГЇГ® ГЇГ Г¬ГїГІГЁ:}
-\def\kw@NameOfMaker{Г‚Г»ГЇГ®Г«Г­ГЁГ«:}
-\def\kw@stdin{Г±ГІГ Г­Г¤Г Г°ГІГ­Г»Г© ГЇГ®ГІГ®ГЄ ГўГўГ®Г¤Г }
-\def\kw@stdout{Г±ГІГ Г­Г¤Г Г°ГІГ­Г»Г© ГЇГ®ГІГ®ГЄ ГўГ»ГўГ®Г¤Г }
-\def\kw@Input{Г”Г®Г°Г¬Г ГІ ГўГµГ®Г¤Г­Г®ГЈГ® ГґГ Г©Г«Г }
-\def\kw@Output{Г”Г®Г°Г¬Г ГІ ГўГ»ГµГ®Г¤Г­Г®ГЈГ® ГґГ Г©Г«Г }
-\def\kw@Example{ГЏГ°ГЁГ¬ГҐГ°}
-\def\kw@Code{ГЉГ®Г¤ ГЇГ°Г®ГЈГ°Г Г¬Г¬Г»}
-\def\kw@Examples{ГЏГ°ГЁГ¬ГҐГ°Г»}
-\def\kw@page{Г‘ГІГ°Г Г­ГЁГ¶Г }
-\def\kw@of{ГЁГ§}
+\def\kw@Problem{Задание}
+\def\kw@InputFileName{Имя входного файла:}
+\def\kw@OutputFileName{Имя выходного файла:}
+\def\kw@TimeLimit{Ограничение по времени:}
+\def\kw@MemoryLimit{Ограничение по памяти:}
+\def\kw@NameOfMaker{Выполнил:}
+\def\kw@stdin{стандартный поток ввода}
+\def\kw@stdout{стандартный поток вывода}
+\def\kw@Input{Формат входного файла}
+\def\kw@Output{Формат выходного файла}
+\def\kw@Example{Пример}
+\def\kw@Code{Код программы}
+\def\kw@Examples{Примеры}
+\def\kw@page{Страница}
+\def\kw@of{из}
 \else
 \def\kw@Problem{Problem}
 \def\kw@InputFileName{Input file:}
@@ -162,12 +162,6 @@
 \huge \textbf{\StrBehind{\detokenize\expandafter{\NameOfMyProg}}{/}}
 }
 \end{center}
-\lstset{
-    breaklines=true,
-    tabsize=4,
-    literate={\ \ }{{\ }}1
-}
-
 \lstinputlisting[language=C]{\NameOfMyProg}
 
 }
@@ -190,7 +184,7 @@
 % -- Default limits --
 
 \if@russian
-\def\defaultmemorylimit{64 Г¬ГҐГЈГ ГЎГ Г©ГІГ }
+\def\defaultmemorylimit{64 мегабайта}
 \else
 \def\defaultmemorylimit{64 megabytes}
 \fi
