@@ -1,2 +1,2 @@
-pdflatex mytask.tex
-pdflatex mytask.tex
+pdflatex problems.tex
+pdflatex problems.tex
