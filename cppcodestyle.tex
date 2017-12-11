@@ -1,0 +1,227 @@
+\documentclass[10pt]{article}
+
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc} 
+\usepackage[english, russian]{babel} 
+\usepackage[a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{amsbsy}
+
+\title{Требования к оформлению кода на C++}
+\author{}
+\date{}
+
+\definecolor{string}{HTML}{61a1b0} % цвет строк в коде
+\definecolor{comment}{HTML}{61a1b0} % цвет комментариев в коде
+\definecolor{keyword}{HTML}{007021} % цвет ключевых слов в коде
+\definecolor{morecomment}{HTML}{8000FF} % цвет include и других элементов в коде
+\definecolor{сaptiontext}{HTML}{FFFFFF} % цвет текста заголовка в коде
+\definecolor{сaptionbk}{HTML}{999999} % цвет фона заголовка в коде
+\definecolor{bk}{HTML}{FFFFFF} % цвет фона в коде
+\definecolor{frame}{HTML}{999999} % цвет рамки в коде
+\definecolor{brackets}{HTML}{B40000} % цвет скобок в коде
+\definecolor{digits}{HTML}{40A070} % цвет скобок в коде
+
+
+% Настройки отображения кода
+ 
+\lstset{
+	language=C++, % Язык кода по умолчанию
+	% Цвета
+	keywordstyle=\color{keyword}\ttfamily\bfseries,
+	stringstyle=\color{string}\ttfamily,
+	commentstyle=\color{comment}\ttfamily\itshape,
+	morecomment=[l][\color{morecomment}]{\#}, 
+	% Настройки отображения     
+	breaklines=true, % Перенос длинных строк
+	basicstyle=\ttfamily\footnotesize, % Шрифт для отображения кода
+	tabsize=3, % Размер табуляции в пробелах
+	xleftmargin=1cm,
+	% Для отображения русского языка
+	extendedchars=true,
+	literate={Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+	{~}{{\textasciitilde}}1
+	{а}{{\selectfont\char224}}1
+	{б}{{\selectfont\char225}}1
+	{в}{{\selectfont\char226}}1
+	{г}{{\selectfont\char227}}1
+	{д}{{\selectfont\char228}}1
+	{е}{{\selectfont\char229}}1
+	{ё}{{\"e}}1
+	{ж}{{\selectfont\char230}}1
+	{з}{{\selectfont\char231}}1
+	{и}{{\selectfont\char232}}1
+	{й}{{\selectfont\char233}}1
+	{к}{{\selectfont\char234}}1
+	{л}{{\selectfont\char235}}1
+	{м}{{\selectfont\char236}}1
+	{н}{{\selectfont\char237}}1
+	{о}{{\selectfont\char238}}1
+	{п}{{\selectfont\char239}}1
+	{р}{{\selectfont\char240}}1
+	{с}{{\selectfont\char241}}1
+	{т}{{\selectfont\char242}}1
+	{у}{{\selectfont\char243}}1
+	{ф}{{\selectfont\char244}}1
+	{х}{{\selectfont\char245}}1
+	{ц}{{\selectfont\char246}}1
+	{ч}{{\selectfont\char247}}1
+	{ш}{{\selectfont\char248}}1
+	{щ}{{\selectfont\char249}}1
+	{ъ}{{\selectfont\char250}}1
+	{ы}{{\selectfont\char251}}1
+	{ь}{{\selectfont\char252}}1
+	{э}{{\selectfont\char253}}1
+	{ю}{{\selectfont\char254}}1
+	{я}{{\selectfont\char255}}1
+	{А}{{\selectfont\char192}}1
+	{Б}{{\selectfont\char193}}1
+	{В}{{\selectfont\char194}}1
+	{Г}{{\selectfont\char195}}1
+	{Д}{{\selectfont\char196}}1
+	{Е}{{\selectfont\char197}}1
+	{Ё}{{\"E}}1
+	{Ж}{{\selectfont\char198}}1
+	{З}{{\selectfont\char199}}1
+	{И}{{\selectfont\char200}}1
+	{Й}{{\selectfont\char201}}1
+	{К}{{\selectfont\char202}}1
+	{Л}{{\selectfont\char203}}1
+	{М}{{\selectfont\char204}}1
+	{Н}{{\selectfont\char205}}1
+	{О}{{\selectfont\char206}}1
+	{П}{{\selectfont\char207}}1
+	{Р}{{\selectfont\char208}}1
+	{С}{{\selectfont\char209}}1
+	{Т}{{\selectfont\char210}}1
+	{У}{{\selectfont\char211}}1
+	{Ф}{{\selectfont\char212}}1
+	{Х}{{\selectfont\char213}}1
+	{Ц}{{\selectfont\char214}}1
+	{Ч}{{\selectfont\char215}}1
+	{Ш}{{\selectfont\char216}}1
+	{Щ}{{\selectfont\char217}}1
+	{Ъ}{{\selectfont\char218}}1
+	{Ы}{{\selectfont\char219}}1
+	{Ь}{{\selectfont\char220}}1
+	{Э}{{\selectfont\char221}}1
+	{Ю}{{\selectfont\char222}}1
+	{Я}{{\selectfont\char223}}1
+	{і}{{\selectfont\char105}}1
+	{ї}{{\selectfont\char168}}1
+	{є}{{\selectfont\char185}}1
+	{ґ}{{\selectfont\char160}}1
+	{І}{{\selectfont\char73}}1
+	{Ї}{{\selectfont\char136}}1
+	{Є}{{\selectfont\char153}}1
+	{Ґ}{{\selectfont\char128}}1 
+	{0}{{{\color{digits}0}}}1
+	{1}{{{\color{digits}1}}}1
+        {2}{{{\color{digits}2}}}1
+        {3}{{{\color{digits}3}}}1
+        {4}{{{\color{digits}4}}}1
+        {5}{{{\color{digits}5}}}1
+        {6}{{{\color{digits}6}}}1
+        {7}{{{\color{digits}7}}}1
+        {8}{{{\color{digits}8}}}1
+        {9}{{{\color{digits}9}}}1
+	{\{}{{{\color{brackets}\{}}}1 % Цвет скобок {
+	{\}}{{{\color{brackets}\}}}}1 % Цвет скобок }
+}
+
+\begin{document}
+\maketitle
+
+\section{Форматирование}
+
+\begin{enumerate}
+
+\item Используйте два или четыре пробела для отступов или символ табуляции для отступов. Отступы внутри одной программы должны быть одинакового размера.
+
+\item Функции разделяйте одной пустой строкой. Смысловые блоки внутри одной функции разделяйте пустой строкой.
+
+\item Если вы используете константу более одного раза, объявите ее, как таковую.
+
+\item Cкобки не отделяются пробелами с внутренней стороны. Между функцией и ее аргументами пробел не ставится.
+
+\begin{lstlisting}
+spam(ham[1]); // Правильно
+spam( ham [ 1 ] ); // Неправильно
+spam (ham[1]); // Неправильно
+\end{lstlisting}
+
+\item Перед запятой пробел не ставится, после — ставится.
+
+\begin{lstlisting}
+printf("%d %d", x, y); // Правильно
+printf("%d %d" , x , y); // Неправильно
+printf("%d %d",x,y); // Неправильно
+\end{lstlisting}
+
+\item Всегда окружайте следующие бинарные операторы ровно одним символом пробела с каждой стороны:
+
+\begin{enumerate}[1.]
+	\item присваивания (\texttt{=, +=, -=} и т. д.)
+	\item сравнения (\texttt{==, <, >, !=, <=, >=})
+	\item логические (\texttt{\&, |, \&\&, ||})
+	\item арифметические (\texttt{+, -, *, /, \%})
+\end{enumerate}
+
+\item Не располагайте несколько инструкций в одной строке. Разнесите их по разным строкам.
+
+\begin{lstlisting}
+x = 35;
+func(10); // Правильно
+x = 35, func(10); // Неправильно
+\end{lstlisting}
+
+\item Не располагайте блок из нескольких инструкций на одной строке сразу после if, while и т. д.
+
+\item Ширина строки не должна превышать 80-120 символов.
+
+\item Объявление переменных должно быть максимально близко к месту их использования.
+
+\item Открывающие фигурные скобки можно переносить на следующую строку, можно не переносить, но нужно придерживаться одного стиля. Если не переносите, то ставьте пробел.
+
+\item Нужно ставить пробел перед скобками стандартных операторов (if, while и т. д.)
+
+\begin{lstlisting}
+while (true); // Правильно
+while(true); // Неправильно
+\end{lstlisting}
+
+\end{enumerate}
+
+\section{Имена}
+
+\begin{enumerate}
+
+\item Не рекомендуется использовать символы «l», «O», и «I» как имена переменных. В некоторых шрифтах они могут быть очень похожи на цифры.
+
+\item Название переменной должно содержать информацию о ее назначении, не допускается использование названий из одной буквы, за исключением счетчиков в циклах (i, j, k) и переменных, хранящих размер входных данных (n, m).
+
+\item Давайте переменным говорящие английские имена, не используйте транслит.
+
+\begin{lstlisting}
+cin >> num_letters; // Правильно
+cin >> kolvo_bukv; // Неправильно
+\end{lstlisting}
+
+\item Имена констант должны содержать только заглавные буквы. Названия классов и структур должны начинаться с заглавной буквы. Названия
+переменных должны начинаться с маленькой буквы. Слова разделяются символами подчёркивания или с помощью CamelCase. Необходимо придерживаться одного
+стиля в программе.
+Примеры: \texttt{const int NAME, const int NAME\_WITH\_SEVERAL\_WORDS\_IN\_IT, struct Struct, class Class\_with\_several\_words, int var, int varWithSeveralWords}.
+
+\end{enumerate}
+
+\end{document}
